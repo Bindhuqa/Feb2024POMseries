@@ -78,8 +78,9 @@
 					<forkCount>3</forkCount>
 					<reuseForks>true</reuseForks>
 					<suiteXmlFiles>
-						<suiteXmlFile>
-							src/test/resource/testrunner/test.regression.xml</suiteXmlFile>
+						
+						<!--	src/test/resource/testrunner/test.regression.xml</suiteXmlFile> -->
+							 <suiteXmlFile>${suiteXmlFile}</suiteXmlFile> 
 					</suiteXmlFiles>
 
 					<argLine>
