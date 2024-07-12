@@ -41,7 +41,7 @@ pipeline
   steps {
     catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
     git 'https://github.com/naveenanimation20/Feb2024POMSeries.git'
-    bat"mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/test.regression.xml"
+    bat"mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.regression.xml"
                     
                 }
             }
@@ -85,7 +85,7 @@ pipeline
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/naveenanimation20/Feb2024POMSeries.git'
-                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testrunner/test.sanity.xml"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.sanity.xml"
                     
                 }
             }
