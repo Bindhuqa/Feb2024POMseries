@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/jglick/simple-maven-project-with-tests.git'
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
+                bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
             post {
                 success {
@@ -67,7 +67,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/Bindhuqa/Feb2024POMSeries.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.regression.xml"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.regression.xml"
                 }
             }
             post {
@@ -128,7 +128,7 @@ pipeline {
             steps {
                 catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
                     git 'https://github.com/Bindhuqa/Feb2024POMSeries.git'
-                    sh "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.sanity.xml"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resource/testrunner/test.sanity.xml"
                 }
                 script {
                     env.SANITY_TESTS_RAN = true
